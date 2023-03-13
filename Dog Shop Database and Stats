@@ -1,0 +1,28 @@
+--items and quantities that need to be in the database 
+/**dogshop
+hats (3)
+shirts (5) 
+rope (2)
+shoes (3) 
+collars (2)
+**/
+--create database for DogShop
+
+
+CREATE TABLE Dogshop (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quanitity INTEGER, color TEXT);
+
+INSERT INTO dogshop VALUES (1, "Hats", "5", "3", "red");
+INSERT INTO dogshop VALUES (2, "shirts", "10", "5", "purple");
+INSERT INTO dogshop VALUES (3, "rope", "1", "2", "black");
+INSERT INTO dogshop VALUES (4, "Shoes", "20", "3", "white");
+INSERT INTO dogshop VALUES (5, "collars", "5", "2", "green");
+
+--display database ordered by price.
+SELECT * FROM Dogshop
+ORDER BY price desc; 
+
+--How many items are more than 10 and how many do we have 
+SELECT * from Dogshop WHERE price <10 ORDER BY quanitity;
+
+--Which are the lowest to highest priced items by name? 
+SELECT name FROM dogshop GROUP BY price ORDER BY SUM(price)DESC;
